@@ -1,4 +1,4 @@
-#include <bits/std+>
+#include <bits/stdc++.h>
 using namespace std;
 
 int maxSubArray(const vector<int> &nums)
