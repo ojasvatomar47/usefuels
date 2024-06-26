@@ -25,6 +25,11 @@ public:
         return ans;
     }
 
+    ll mod(ll x)
+    {
+        return ((x % MOD) + MOD) % MOD;
+    }
+
     ll add(ll a, ll b)
     {
         return (a + b) % MOD;
