@@ -32,7 +32,10 @@ public:
 
     ll add(ll a, ll b)
     {
-        return (a + b) % MOD;
+        a += b;
+        if (a >= MOD)
+            a -= MOD;
+        return a;
     }
 
     ll sub(ll a, ll b)
