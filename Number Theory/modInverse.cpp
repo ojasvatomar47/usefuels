@@ -20,7 +20,7 @@ ll gcdExtended(ll a, ll b, ll &x, ll &y)
     return gcd;
 }
 
-ll modInverse(ll a, ll m)
+ll modInv(ll a, ll m)
 {
     ll x, y;
     ll g = gcdExtended(a, m, x, y);
@@ -33,6 +33,23 @@ ll modInverse(ll a, ll m)
     {
         return (x % m + m) % m;
     }
+}
+
+// Fermat's theorem
+ll modInverse(ll a, ll mod)
+{
+    ll res = 1;
+    ll exponent = mod - 2;
+    while (exponent > 0)
+    {
+        if (exponent % 2 == 1)
+        {
+            res = (res * a) % mod;
+        }
+        a = (a * a) % mod;
+        exponent /= 2;
+    }
+    return res;
 }
 
 int main()
